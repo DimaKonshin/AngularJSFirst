@@ -1,5 +1,11 @@
 ﻿var app = angular.module("app", []);
 
 app.controller("appController", function ($scope) {
-    new AppStart($scope);
+    var p1 = new Point("Hello");
+
+    $scope.message = p1.message;
+
+    $scope.addProduct = function (productName) {
+        $scope.message = productName;
+    }
 });
