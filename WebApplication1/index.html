@@ -18,40 +18,12 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script>
-        function Point(message) {
-            this.message = message;
 
-            this.showMessage = function () {
-                console.log(this.message);
-            }
+    <!--Controller-->
+    <script src="Assets/Scripts/appController.js"></script>
 
-            var showMessage2 = function () {
-                this.message = "default message";
-                console.log(this.message);
-            }
-
-            showMessage2();
-        }
-
-        var p1 = new Point("hello");
-        p1.showMessage();
-        //p1.showMessage2(); error - private method
-
-        var app = angular.module("app", []);
-
-        app.controller("appController", function ($scope) {
-            new AppStart($scope);
-        });
-
-        function AppStart($scope) {
-            $scope.message = p1.message;
-
-            $scope.addProduct = function (productName) {
-                $scope.message = productName;
-            }
-        }
-
-    </script>
+    <!--Models-->
+    <script src="Assets/Scripts/Point.js"></script>
+    <script src="Assets/Scripts/AppStart.js"></script>
 </body>
 </html>
