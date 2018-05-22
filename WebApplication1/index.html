@@ -5,8 +5,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 <body ng-controller="appController">
-    
+
     Message: {{message}}
+
+    <div style="margin:10px;">
+        <input type="text" placeholder="product name" ng-model="productName" />
+    </div>
+    <div style="margin:10px;">
+        <button ng-click="addProduct(productName)">
+            Create
+        </button>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script>
@@ -37,6 +46,10 @@
 
         function AppStart($scope) {
             $scope.message = p1.message;
+
+            $scope.addProduct = function (productName) {
+                $scope.message = productName;
+            }
         }
 
     </script>
